@@ -1,0 +1,102 @@
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    color: #333;
+}
+.wrapper {
+    width: 80%;
+    margin: auto;
+    max-width: 800px;
+}
+header {
+    background: #fefefe; /* Couleur de fond de l'en-tête */
+    color: rgb(119, 10, 10);
+    padding: 20px 0; /* Ajustez le rembourrage comme nécessaire */
+    text-align: center;
+    position: relative; /* Position relative pour positionner les images absolument */
+}
+main {
+    background: white;
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+.controls {
+    text-align: center;
+    margin-bottom: 10px;
+}
+input[type=range] {
+    width: 50%;
+}
+button {
+    padding: 10px 20px;
+    background: #820505;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background: #f9f9f9;
+}
+.summary-box {
+    border: 1px solid #ddd;
+    background: #fafafa;
+    padding: 10px;
+    min-height: 100px;
+    border-radius: 4px;
+}
+.header-flag, .header-pen {
+    height: auto; /* Hauteur automatique pour maintenir le ratio */
+    width: 90px; /* Largeur ajustée pour vos images */
+    position: absolute; /* Positionnement absolu */
+}
+
+.header-flag {
+    left: 1px; /* Ajustez en fonction de votre mise en page */
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%); /* Alignement vertical précis */
+}
+
+.header-pen {
+    right: 1px; /* Ajustez en fonction de votre mise en page */
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%); /* Alignement vertical précis */
+}
+
+header h3 {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0  20px; /* Ajustez le padding pour ne pas chevaucher les images */
+    font-size: 20px; /* Taille de la police comme dans votre image */
+    line-height: 30px; /* Ajustez la hauteur de ligne pour centrer verticalement le texte */
+    color: #000; /* Couleur du texte */
+}
+
+footer {
+    background-color: #fdfdfd; /* Utilisez le code couleur correspondant au timbre de boycott */
+    color: rgb(156, 9, 9);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-stamp {
+    height: 50px; /* ou la taille que vous préférez */
+    width: auto;
+    display: block;
+    margin: 0 auto; /* cela centrera le timbre dans le pied de page */
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="{{ url_for('static', filename='img1.jpg') }}" alt="Palestine flag" class="header-flag"/>
+            <h3>  Echoes from Palestine: Search for the truth <br>through automated summarization</br></h3>
+            <img src="{{ url_for('static', filename='img2.jpg') }}" class="header-pen"/>
+        </header>
+        <main>
+            <textarea id="textInput" placeholder="Enter or paste your text ..."></textarea>
+            <div class="controls">
+                
+                <button id="summarizeButton">Summarize</button>
+            </div>
+            <div id="summaryOutput" class="summary-box"></div>
+        </main>
+        <footer>
+            <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Boycott stamp" class="footer-stamp"/>
+            <h4>Don't support businesses that support genocide !!!</h4>
+        </footer>
+    </div>
+     <script>
+        document.getElementById('summarizeButton').addEventListener('click', function() {
+    var text = document.getElementById('textInput').value;
+
+    // Assurez-vous qu'il y a du texte à résumer
+    if (!text.trim()) {
+        alert('Please enter some text to summarize.');
+        return;
+    }
+
+    // Envoyez la requête à l'API Flask
+    fetch('http://127.0.0.1:5000/summarize', {  // Utilisez l'adresse relative si vous servez la page HTML via Flask
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: text })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById('summaryOutput').textContent = data.summary;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
+
+    </script>
+</body>
+</html>
